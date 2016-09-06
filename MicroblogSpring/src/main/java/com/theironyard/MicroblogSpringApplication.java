@@ -9,4 +9,6 @@ public class MicroblogSpringApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MicroblogSpringApplication.class, args);
 	}
+
+
 }
