@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{{^name}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Enter your name" name="userName"/>
+    <button type="submit">Login</button>
+</form>
+{{/name}}
+
+{{#name}}
+<form action="/add-message" method="post">
+    <input type="text" placeholder="Enter your message" name="message" width="400"/>
+    <button type="submit">Submit</button>
+</form>
+
+Messages by {{name}}!
+{{/name}}
+
+<ol>
+    {{#messageList}}
+    <li>{{text}}
+        <form action="/delete-message" method="post">
+        <input type="text" value="{{id}}" name="messageId"/>
+        <button type="submit">Delete</button>
+        </form>
+    </li>
+    {{/messageList}}
+</ol>
+</body>
+</html>
