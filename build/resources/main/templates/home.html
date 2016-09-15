@@ -9,15 +9,14 @@ Messages by, {{.}}:
     <input type="text" placeholder="Enter message" name="message"/>
     <button type="submit">Submit</button>
 </form>
-
 <br>
+
 {{#messages}}
-{{text}}
+{{id}}. {{text}}
 <form action="/delete-message" method="post">
     <input type="hidden" value="{{id}}" name="id">
     <button type="submit">Delete</button>
 </form>
-<br>
 {{/messages}}
 
 {{/name}}
